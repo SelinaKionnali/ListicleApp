@@ -9,7 +9,7 @@ import GoogleLogin from '../../../components/GoogleLogin/index.js'
 
 const Signin = () => {
     const onSignUp = () => {
-        console.log('hello')
+        console.log('hola')
     }
     return (
         <View style={styles.container}>
