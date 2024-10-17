@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Signin = ({navigation}) => {
     const onSignUp = () => {
-        navigation.navigate('Signup')
+        console.log('hello')
     }
 
     const onBack = () => {
