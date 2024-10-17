@@ -1,11 +1,16 @@
 import React from 'react'
 import {Text, Image, View, Pressable} from 'react-native'
-import {styles} from '../Splash/styles.js'
 import udemy1 from '../../../assets/udemy1.png'
 import Button from '../../../components/Button/index.js'
+import {styles} from './styles.js'
 
-
-const Splash = () => {
+const Splash = ({navigation}) => {
+    const onSignup = () => {
+        navigation.navigate('Signup')
+    }
+    const onSignin = () => {
+        navigation.navigate('Signin')
+    }
     return (
         <View style={styles.container}>
             <Image resizeMode='contain' style={styles.image} source={udemy1} />
@@ -14,8 +19,8 @@ const Splash = () => {
             <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
             <Text style={styles.title}>Here!</Text>
             </View>
-            <Button title='Sign Up' />
-            <Pressable hitSlop={20}>
+            <Button onPress={onSignup} title='Sign Up' />
+            <Pressable onPress={onSignin} hitSlop={20}>
             <Text style={styles.footerText}>Sign In</Text>
             </Pressable>
             

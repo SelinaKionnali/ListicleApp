@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Text, View} from 'react-native'
+import {ScrollView, Text, View} from 'react-native'
 import { styles } from './styles.js'
 import AuthHeader from '../../../components/AuthHeader/index.js'
 import Input from '../../../components/Input/index.js'
@@ -7,15 +7,21 @@ import Checkbox from '../../../components/Checkbox/index.js'
 import Button from '../../../components/Button/index.js'
 import LineSeparator from '../../../components/LineSeparator/index.js'
 import GoogleLogin from '../../../components/GoogleLogin/index.js'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Signup = () => {
+const Signup = ({navigation}) => {
     const [checked, setChecked] = useState(false)
     const onSignin = () => {
-        console.log('hello')
+        navigation.navigate('Signin')
     }
+    const onBack = () => {
+        navigation.goBack()
+    }
+
     return (
-        <View style={styles.container}>
-            <AuthHeader title='Sign Up' />
+        <SafeAreaView>
+        <ScrollView style={styles.container}>
+            <AuthHeader onBackPress={onBack} title='Sign Up' />
             <Input label='Name' placeholder='John Doe'/>
             <Input label='Email' placeholder='example@email.com'/>
             <Input isPassword label='Password' placeholder='******'/>
@@ -30,7 +36,8 @@ const Signup = () => {
             <Text onPress={onSignin} style={styles.footerText}>Already have an account?
                 <Text style={styles.footerLink}> Sign In</Text> 
                 </Text>
-        </View>
+        </ScrollView>
+        </SafeAreaView>
     )
 }
 
