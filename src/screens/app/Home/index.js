@@ -44,7 +44,7 @@ const Home = ({navigation}) => {
     }
     const renderProductItem = ({ item }) => {
         const onProductPress = (product) => {
-            navigation.navigate('ProductDetail')
+            navigation.navigate('ProductDetail', {product})
         }
         return (
             <ProductHomeItem onPress={() => onProductPress(item)} {...item}  />

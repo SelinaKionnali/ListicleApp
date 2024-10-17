@@ -1,17 +1,24 @@
 import React from 'react'
-import {ScrollView, Text} from 'react-native'
+import {Image, ScrollView, Text, View} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import {styles} from './styles.js'
+import { styles } from './styles.js'
 
 
-const Profile = () => {
+const ProductDetail = ({ navigation, route }) => {
+    const { product } = route?.params || {}
+
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.safe}>
             <ScrollView>
-                <Text>Product Details</Text>
+                <Image style={styles.image} source={{uri: product.image}}/>
+                <View style={styles.content}>
+                <Text style={styles.title}>{product?.title}</Text>
+                <Text style={styles.price}>{product?.price}</Text>
+                <Text style={styles.description}>{product?.description}</Text>
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
 }
 
-export default React.memo(Profile);
+export default React.memo(ProductDetail);
