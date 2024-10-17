@@ -5,7 +5,7 @@ import eyeIcon from '../../assets/eye.png'
 import closedEyeIcon from '../../assets/eye_closed.png'
 
 
-const Input = ({ label, placeholder, isPassword }) => {
+const Input = ({ label, placeholder, isPassword, value, onChangeText }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     onEyePress = () => {
@@ -16,7 +16,7 @@ const Input = ({ label, placeholder, isPassword }) => {
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
             <View style={styles.inputContainer}>
-                <TextInput secureTextEntry={isPassword && !isPasswordVisible} placeholder={placeholder} style={styles.input} />
+                <TextInput value={value} onChangeText={onChangeText} secureTextEntry={isPassword && !isPasswordVisible} placeholder={placeholder} style={styles.input} />
 
                     {isPassword ? (
                         <Pressable onPress={onEyePress}>

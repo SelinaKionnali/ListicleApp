@@ -6,7 +6,7 @@ import searchIcon from '../../assets/search.png'
 import logoutIcon from '../../assets/Logout.png'
 import Input from '../Input/index.js'
 
-const Header = ({title, onBackPress, onLogout, showSearch, showBack, showLogout}) => {
+const Header = ({title, onBackPress, onSearch, onLogout, showSearch, showBack, showLogout, keyword}) => {
 
     const [showSearchInput, setShowSearchInput] = useState(false)
 
@@ -15,7 +15,7 @@ const Header = ({title, onBackPress, onLogout, showSearch, showBack, showLogout}
     }
 
     return (
-        <View>
+        <View style={styles.mainContainer}>
        <View style={styles.container}>
         {showBack ? (
             <Pressable hitSlop={20} onPress={onBackPress}>
@@ -36,7 +36,7 @@ const Header = ({title, onBackPress, onLogout, showSearch, showBack, showLogout}
         ): <View style={styles.space}/>}
        </View>
        {showSearchInput ? (
-        <Input placeholder="Type your keyword..." />
+        <Input onChange={onSearch} onChangeText={onSearch} value={keyword} placeholder="Type your keyword..." />
        ): null}
        </View>
     )
