@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/screens/app/Home/index.js'
 import Favourites from './src/screens/app/Favourites/index.js'
+import ProductDetail from './src/screens/app/ProductDetail/index.js'
 import Profile from './src/screens/app/Profile/index.js'
 import { colours } from './src/utilities/colours';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
@@ -75,6 +76,7 @@ const App = () => {
 {isSignedIn ? (
         <>
           <Stack.Screen name='Tabs' component={Tabs} options={{headerShown: false}}  />
+          <Stack.Screen name='ProductDetail' component={ProductDetail} options={{headerShown: false}}  />
         </>
 ):(
   <>

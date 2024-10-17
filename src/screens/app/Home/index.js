@@ -9,13 +9,12 @@ import { products } from '../../../data/Products.js'
 import ProductHomeItem from '../../../components/ProductHomeItem/index.js'
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const [selectedCategory, setSelectedCategory] = useState()
     const [filteredProduct, setFilteredProduct] = useState(products)
     const [keyword, setKeyword] = useState()
 
-    console.log('keyword:>>', keyword)
 
     useEffect(() => {
         if (selectedCategory && !keyword) {
@@ -44,8 +43,11 @@ const Home = () => {
         )
     }
     const renderProductItem = ({ item }) => {
+        const onProductPress = (product) => {
+            navigation.navigate('ProductDetail')
+        }
         return (
-            <ProductHomeItem {...item}  />
+            <ProductHomeItem onPress={() => onProductPress(item)} {...item}  />
         )
     }
     return (
@@ -58,4 +60,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default React.memo(Home);
