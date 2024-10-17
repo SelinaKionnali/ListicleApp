@@ -3,11 +3,12 @@ import { colours } from "../../utilities/colours";
 
 export const styles = StyleSheet.create({
     container: {
-        padding: 8,
         backgroundColor: colours.blue,
         borderRadius: 8,
-        paddingVertical: 8,
-        width: '100%',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16
     },
     title: {
         fontSize: 16,

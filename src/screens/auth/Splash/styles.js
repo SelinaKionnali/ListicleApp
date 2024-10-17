@@ -31,5 +31,8 @@ export const styles = StyleSheet.create({
         color: colours.blue,
         textAlign: 'center',
         marginTop: 30
+    },
+    btnCont: {
+        flexDirection: 'row'
     }
 })

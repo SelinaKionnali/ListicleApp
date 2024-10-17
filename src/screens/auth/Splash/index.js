@@ -14,14 +14,19 @@ const Splash = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image resizeMode='contain' style={styles.image} source={udemy1} />
+
             <View style={styles.titleContainer}>
-            <Text style={styles.title}>You'll find</Text>
-            <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
-            <Text style={styles.title}>Here!</Text>
+                <Text style={styles.title}>You'll find</Text>
+                <Text style={[styles.title, styles.innerTitle]}>All you need</Text>
+                <Text style={styles.title}>Here!</Text>
             </View>
-            <Button onPress={onSignup} title='Sign Up' />
+
+            <View style={styles.btnCont}>
+                <Button onPress={onSignup} title='Sign Up' />
+            </View>
+
             <Pressable onPress={onSignin} hitSlop={20}>
-            <Text style={styles.footerText}>Sign In</Text>
+                <Text style={styles.footerText}>Sign In</Text>
             </Pressable>
             
 

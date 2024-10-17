@@ -7,9 +7,6 @@ export const styles = StyleSheet.create({
     safe: {
         flex: 1,
     },
-    container: {
-        padding: 24
-    },
     image: {
         width: width,
         height: height * 0.45
@@ -37,5 +34,32 @@ export const styles = StyleSheet.create({
         fontWeight: '300',
         marginVertical: 8,
         color: colours.textGrey
+    },
+    footer: {
+        padding: 24,
+        flexDirection: 'row',
+        width: width - 24
+    },
+    btnContainer: {
+        backgroundColor: colours.borderColour,
+        width: 60,
+        height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        marginRight: 8
+    },
+    backArrowContainer: {
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        backgroundColor: colours.white,
+        position: 'absolute',
+        margin: 24
+    },
+    backArrow: {
+        width: 20,
+        height: 20,
     }
 })
