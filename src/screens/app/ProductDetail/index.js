@@ -5,10 +5,12 @@ import { styles } from './styles.js'
 import Button from '../../../components/Button/index.js'
 import markerBtn from '../../../assets/markerFocussed.png'
 import backArrow from '../../../assets/BackArrow.png'
+import ImageCarousel from '../../../components/ImageCarousel/index.js'
 
 
 const ProductDetail = ({ navigation, route }) => {
     const { product } = route?.params || {}
+    console.log(product)
 
     const onBackPress = () => {
         navigation.goBack();
@@ -17,7 +19,13 @@ const ProductDetail = ({ navigation, route }) => {
     return (
         <SafeAreaView style={styles.safe}>
             <ScrollView style={styles.container}>
-                <Image style={styles.image} source={{uri: product.image}}/>
+                {product?.images?.length ? (
+                    <ImageCarousel style={styles.image} images={product?.images}/>
+
+                ) : (
+                    <Image style={styles.image} source={{uri: product.image}}/>
+
+                )}
 
                 <View style={styles.content}>
                     <Text style={styles.title}>{product?.title}</Text>
