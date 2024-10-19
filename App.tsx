@@ -46,7 +46,12 @@ const Tabs = () => (
     },
     headerShown: false,
     tabBarShowLabel: false,
-    tabBarStyle: {borderTopColor: colours.lightGrey}
+    tabBarStyle: {
+      borderTopColor: colours.lightGrey,
+      elevation: 0,  // Removes shadow on Android
+      shadowOpacity: 0,  // Removes shadow on iOS
+      backgroundColor: 'transparent',  // Makes background transparent
+    }
     })}
     >
 
